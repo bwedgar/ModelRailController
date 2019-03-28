@@ -12,7 +12,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
   <style>
-
     body {
       background-color: black;
       color: red;
@@ -24,40 +23,158 @@
       background-color: black;
       color: red;
       font-family: verdana;
-      font-size: 7vw;
+      font-size: 3vw;
       border: 1px solid red;
       padding: 2% 2%;
-      text-align: left  ;
+      text-align: left;
     }
 
+    .group7 {
+      width: 12.5%;
+    }
+
+    .group8 {
+      width: 10.5%;
+    }
+
+    .pressed {
+      background-color: #880000;
+    }
+
+
+    }
   </style>
 
   <script>
-
     function ready() {
-      //(replace with javascript)
-      document.getElementById("buttonA").addEventListener("click", () => console.log("you pressed the button once"));
-    }
+
+      document.getElementById("buttonTrainLeftFast").addEventListener("click", () => {
+        for (e of document.getElementsByName("speed")) {
+          e.classList.remove("pressed")
+        }
+        document.getElementById("buttonTrainLeftFast").classList.add("pressed")
+        console.log("fast train")
+      })
+
+      document.getElementById("buttonTrainLeftSlow").addEventListener("click", () => {
+        for (e of document.getElementsByName("speed")) {
+          e.classList.remove("pressed")
+        }
+        document.getElementById("buttonTrainLeftSlow").classList.add("pressed")
+        console.log("slow train")
+      })
+
+      document.getElementById("buttonTrainLeftVerySlow").addEventListener("click", () => {
+        for (e of document.getElementsByName("speed")) {
+          e.classList.remove("pressed")
+        }
+        document.getElementById("buttonTrainLeftVerySlow").classList.add("pressed")
+        console.log("very slow train")
+      })
+
+      document.getElementById("buttonTrainStop").addEventListener("click", () => {
+        for (e of document.getElementsByName("speed")) {
+          e.classList.remove("pressed")
+        }
+        document.getElementById("buttonTrainStop").classList.add("pressed")
+        console.log("stopped train")
+      })
+
+      document.getElementById("buttonTrainRightVerySlow").addEventListener("click", () => {
+        for (e of document.getElementsByName("speed")) {
+          e.classList.remove("pressed")
+        }
+        document.getElementById("buttonTrainRightVerySlow").classList.add("pressed")
+        console.log("very slow train")
+      })
+
+      document.getElementById("buttonTrainRightSlow").addEventListener("click", () => {
+        for (e of document.getElementsByName("speed")) {
+          e.classList.remove("pressed")
+        }
+        document.getElementById("buttonTrainRightSlow").classList.add("pressed")
+        console.log("slow train")
+      })
+
+      document.getElementById("buttonTrainRightFast").addEventListener("click", () => {
+        for (e of document.getElementsByName("speed")) {
+          e.classList.remove("pressed")
+        }
+        document.getElementById("buttonTrainRightFast").classList.add("pressed")
+        console.log("fast train")
+      })
+
+      // actuator buttons
+
+
+      document.getElementById("buttonActuator0").addEventListener("click", () => {
+        if (document.getElementById("buttonActuator0").className.search("pressed") > -1) {
+          document.getElementById("buttonActuator0").classList.remove("pressed")
+        } else {
+          document.getElementById("buttonActuator0").classList.add("pressed")
+        }
+      })
+
+
+
+      b2 = document.getElementById("buttonActuator2")
+      b2.addEventListener("click", () => {
+        b2.classList.add("pressed")
+        console.log(`actuator ${b2.innerHTML}`)
+      })
+
+      b3 = document.getElementById("buttonActuator3")
+      b3.addEventListener("click", () => {
+        b3.classList.add("pressed")
+        console.log(`actuator ${b3.innerHTML}`)
+      })
+
+      b4 = document.getElementById("buttonActuator4")
+      b4.addEventListener("click", () => {
+        b4.classList.add("pressed")
+        console.log(`actuator ${b4.innerHTML}`)
+      })
+
+      b5 = document.getElementById("buttonActuator5")
+      b5.addEventListener("click", () => {
+        b5.classList.add("pressed")
+        console.log(`actuator ${b5.innerHTML}`)
+      })
+
+
+    } //end ready()
+
+
+
+
 
     if (document.readyState == 'loading') {
       document.addEventListener('DOMContentLoaded', ready);
     } else {
       ready();
     }
-
   </script>
 
 </head>
 
 <body>
 
-  <button id="buttonTrainLeftFast" class="buttonGroup7">&lt;&lt;&lt;</button>
-  <button id="buttonTrainLeftSlow" class="buttonGroup7">&lt;&lt;</button>
-    <button id="buttonTrainLeftVerySlow" class="buttonGroup7">&lt;</button>
-      <button id="buttonTrainStop" class="buttonGroup7">0</button>
-        <button id="buttonTrainRightVerySlow" class="buttonGroup7">&gt;</button>
-          <button id="buttonTrainRightSlow" class="buttonGroup7">&gt;&gt;</button>
-            <button id="buttonTrainRightFast" class="buttonGroup7">&gt;&gt;&gt;</button>
+  <button id="buttonTrainLeftFast" name="speed" class="button group7">&lt;&lt;&lt;</button>
+  <button id="buttonTrainLeftSlow" name="speed" class="button group7">&lt;&lt;</button>
+  <button id="buttonTrainLeftVerySlow" name="speed" class="button group7">&lt;</button>
+  <button id="buttonTrainStop" name="speed" class="button group7">0</button>
+  <button id="buttonTrainRightVerySlow" name="speed" class="button group7">&gt;</button>
+  <button id="buttonTrainRightSlow" name="speed" class="button group7">&gt;&gt;</button>
+  <button id="buttonTrainRightFast" name="speed" class="button group7">&gt;&gt;&gt;</button>
+  <br><br>
+  <button id="buttonActuator0" name="actuator" class="button group8">0</button>
+  <button id="buttonActuator1" name="actuator" class="button group8">1</button>
+  <button id="buttonActuator2" name="actuator" class="button group8">2</button>
+  <button id="buttonActuator3" name="actuator" class="button group8">3</button>
+  <button id="buttonActuator4" name="actuator" class="button group8">4</button>
+  <button id="buttonActuator5" name="actuator" class="button group8">5</button>
+  <button id="buttonActuator6" name="actuator" class="button group8">6</button>
+  <button id="buttonActuator7" name="actuator" class="button group8">7</button>
 
 </body>
 
